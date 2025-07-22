@@ -1,2 +1,6 @@
 d.py
 .venv
+test
+.env
+.vscode
+__pycache__
