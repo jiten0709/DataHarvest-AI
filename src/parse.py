@@ -44,7 +44,7 @@ def parse_with_gemini(dom_chunks, parse_description):
     parsed_results = []
     
     for i, chunk in enumerate(dom_chunks, start=1):
-        prompt = TEMPLATE.format(dom_chunks=chunk, parse_description=parse_description)
+        prompt = TEMPLATE.format(dom_content=chunk, parse_description=parse_description)
         
         try:
             response = client.models.generate_content(
@@ -61,5 +61,5 @@ def parse_with_gemini(dom_chunks, parse_description):
             # Optionally, append an error message or empty string
             parsed_results.append("")
 
-        return "\n".join(parsed_results)
+    return "\n".join(parsed_results)
     
